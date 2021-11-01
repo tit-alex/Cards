@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background:#0d1c25;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+
+.slide {
+  height: 80vh;
+  border-radius: 20px;
+  margin: 10px;
+  cursor: pointer;
+  color: #fff;
+  flex: 1;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all .5s ease-in-out;
+}
+
+.title-box {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  opacity: 0;
+  background-color: #111;
+  padding: 5px 15px;
+  border-radius: 25px;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.title-box h3 {
+  font-family: monospace;
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  border-right: 2px solid #fff;
+  padding-right: 2px;
+}
+
+.active .title-box1 > h3 {
+  width: 12.1ch;
+  animation: print-text 1s steps(12) .5s, border-blink .8s step-end .5s 3 forwards;
+}
+
+.active .title-box2 > h3 {
+  width: 15.1ch;
+  animation: print-text 1.5s steps(15) .5s, border-blink .8s step-end .5s 4 forwards;
+}
+
+.active .title-box3 > h3 {
+  width: 13.1ch;
+  animation: print-text 1.3s steps(13) .5s, border-blink .8s step-end .5s 4 forwards;
+}
+
+.active .title-box4 > h3 {
+  width: 17.1ch;
+  animation: print-text 1.7s steps(17) .5s, border-blink .8s step-end .5s 4 forwards;
+}
+
+.active .title-box5 > h3 {
+  width: 16.1ch;
+  animation: print-text 1.7s steps(16) .5s, border-blink .8s step-end 4 forwards;
+}
+
+.active {
+  flex: 3;
+}
+
+.active .title-box{
+  opacity: 1;
+  transition: opacity .3s ease-in .5s;
+}
+
+@keyframes border-blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes print-text {
+  from {
+    width: 0;
+  }
+}
